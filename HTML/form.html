@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modulo Form</title>
-</head>
-<body>
-    <form>
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required><br>
-        <label for="cognome">Cognome:</label>
-        <input type="text" id="cognome" name="cognome"><br>
-        <br>
-        <label for="note">Parlaci di te:</label>
-        <textarea id="note" name="note" rows="5" cols="70"></textarea>
-        <p>Sesso:</p>
-        <input type="radio" id="rdo1" name="genere" value="Maschio">
-        <label for="rdo1">Maschio</label><br>
-        <input type="radio" id="rdo2" name="genere" value="Femmina">
-        <label for="rdo2">Femmina</label>
-        <p>Privacy & Policy</p>
-        <input type="checkbox" id="chk1" name="chk1" value="true" required>
-        <label for="chk1">Accetto e ho preso visione del documento</label><br>
-        <br>
-        <input type="submit" value="Invio">
-    </form>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Modulo Form</title>
+    </head>
+    <body>
+        <form action="https://jsonplaceholder.typicode.com/posts" method="GET">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required><br>
+            <label for="cognome">Cognome:</label>
+            <input type="text" id="cognome" name="cognome"><br>
+            <br>
+            <label for="note">Parlaci di te:</label>
+            <textarea id="note" name="note" rows="5" cols="70"></textarea>
+            <p>Sesso:</p>
+            <input type="radio" id="rdo1" name="genere" value="Maschio">
+            <label for="rdo1">Maschio</label><br>
+            <input type="radio" id="rdo2" name="genere" value="Femmina">
+            <label for="rdo2">Femmina</label>
+            <p>Privacy & Policy</p>
+            <input type="checkbox" id="chk1" name="chk1" value="true" required>
+            <label for="chk1">Accetto e ho preso visione del documento</label><br>
+            <br>
+            <input type="submit" value="Invio">
+        </form>
+    </body>
 </html>
