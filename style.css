@@ -49,3 +49,7 @@ h6 {
 * {
     border: 1px solid gray;
 }
+
+.internal-space {
+    padding: 20px;;
+}
