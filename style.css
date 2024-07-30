@@ -5,3 +5,27 @@
 p {
     text-align: right;
 }
+
+h1 {
+    color: aqua;
+}
+
+h2 {
+    color: blueviolet;
+}
+
+h3 {
+    color: chartreuse;
+}
+
+h4 {
+    color: chocolate;
+}
+
+h5 {
+    color: crimson;
+}
+
+h6 {
+    color:gold;
+}
