@@ -45,3 +45,7 @@ h6 {
 .font {
     font-family: cursive;
 }
+
+* {
+    border: 1px solid gray;
+}
