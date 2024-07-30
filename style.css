@@ -37,3 +37,11 @@ h6 {
 .text-big {
     font-size: 30px;;
 }
+
+.margin {
+    margin-right: 80px;
+}
+
+.font {
+    font-family: cursive;
+}
