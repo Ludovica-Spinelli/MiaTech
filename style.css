@@ -81,3 +81,7 @@ p {
     text-align: center;
     color: burlywood;
 }
+
+.rgb {
+    color: rgb(255, 0, 0);
+}
