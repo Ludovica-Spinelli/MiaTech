@@ -53,3 +53,12 @@ h6 {
 .internal-space {
     padding: 20px;;
 }
+
+a:hover {
+    color: hotpink;
+}
+
+a {
+    margin-left: 50px;
+    font-size: 40px;
+}
