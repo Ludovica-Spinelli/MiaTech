@@ -62,3 +62,13 @@ a {
     margin-left: 50px;
     font-size: 40px;
 }
+
+.tortino {
+    text-align: left;
+}
+
+.ingredienti li:last-child{
+    font-size: 25px;
+    color:brown;
+    font-style: italic;
+}
