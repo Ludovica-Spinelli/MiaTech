@@ -59,11 +59,6 @@ a {
     font-size: 40px;
 }
 
-.tortino {
-    text-align: left;
-    color: black;
-}
-
 .ingredienti li:last-child{
     font-size: 25px;
     color:brown;
@@ -80,4 +75,9 @@ p {
 
 #tortino-cioccolato {
     color: brown;
+}
+
+.tortino {
+    text-align: center;
+    color: burlywood;
 }
