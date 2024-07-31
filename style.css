@@ -2,10 +2,6 @@
     color: red;
 }
 
-p {
-    text-align: right;
-}
-
 h1 {
     color: aqua;
 }
@@ -65,10 +61,23 @@ a {
 
 .tortino {
     text-align: left;
+    color: black;
 }
 
 .ingredienti li:last-child{
     font-size: 25px;
     color:brown;
     font-style: italic;
+}
+
+p {
+    color: red;
+}
+
+.ricetta {
+    color: blue;
+}
+
+#tortino-cioccolato {
+    color: brown;
 }
