@@ -85,3 +85,7 @@ p {
 .rgb {
     color: rgb(255, 0, 0);
 }
+
+.hex {
+    color: #ff0000;
+}
