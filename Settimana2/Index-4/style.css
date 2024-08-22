@@ -1,0 +1,31 @@
+body {
+    height: 2000px;
+}
+
+.none {
+    display: none;
+}
+
+img {
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+.colonne {
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-menu {
+    padding: 40px;
+    background-color: lightgray;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    position: sticky;
+    top: 0;
+}
+

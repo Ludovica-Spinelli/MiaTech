@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 2000px;
+}
+
+.nav-menu, .footer{
+    width: 100%;
+    position: fixed;
+    display: flex;
+}
+
+.nav-menu {
+    padding: 40px;
+    background-color: lightgray;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+a {
+    text-decoration: none;
+}
+
+.footer {
+    height: 50px;
+    background-color: rgb(51, 71, 129);
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.quadrato {
+    position: absolute;
+    bottom: 50px;
+    right: 0;
+    height: 100px;
+    width: 100px;
+    background-color: black;
+}
