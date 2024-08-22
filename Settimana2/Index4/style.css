@@ -9,3 +9,8 @@ img {
 .clear {
     clear: both;
 }
+
+.colonne {
+    display: flex;
+    justify-content: space-around;
+}
