@@ -1,0 +1,56 @@
+:root {
+    --padding-text: 10px;
+    --font-family: "Segoe UI", Arial, sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.card {
+    max-width: 499px;
+    margin: 30px 30px;
+    position: relative;
+    box-shadow: 0px 2px 5px 2px lightgray;
+}
+
+.card:hover {
+    box-shadow: 0px 7px 10px 7px lightgray;
+    transition: all ease-in-out 0.25s;
+}
+
+.card__top-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: tomato;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+}
+
+.card__top-close:hover {
+    background-color: rgb(218, 95, 73);
+}
+
+.card__bottom {
+    padding-bottom: 10px;
+}
+
+h2, p {
+    padding: var(--padding-text);
+    font-family: var(--font-family);
+}
+
+h2 {
+    font-size: 35px;
+}
+
+p {
+    font-size: 20px;
+}
