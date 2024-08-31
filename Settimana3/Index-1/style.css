@@ -1,0 +1,12 @@
+.container {
+    display: flex;
+    background-color: lightblue;
+
+}
+
+.item {
+    width: 150px;
+    height: 150px;
+    background-color: darkgoldenrod;
+    margin: 10px;
+}
