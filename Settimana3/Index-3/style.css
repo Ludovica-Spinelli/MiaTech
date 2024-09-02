@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    background-color: lightblue;
+    flex-wrap: wrap;
+    width: 600px;
+    height: 600px;
+    align-items: center;
+    justify-content: center;
+}
+
+.item {
+    width: 150px;
+    height: 150px;
+    background-color: darkgoldenrod;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;;
+}
