@@ -1,0 +1,43 @@
+.container {
+    display: flex;
+    background-color: lightblue;
+    width: 800px;
+    height: 300px;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+.second-container {
+    width: 400px;
+}
+
+.item {
+    width: 150px;
+    height: 150px;
+    background-color: darkgoldenrod;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.th-3 {
+    flex-grow: 1;
+}
+
+.first {
+    flex-shrink: 3;
+}
+
+.second {
+    flex-basis: 250px;
+}
+
+.end {
+    align-self: flex-end;
+}
+
+.start {
+    align-self: flex-start;
+}
