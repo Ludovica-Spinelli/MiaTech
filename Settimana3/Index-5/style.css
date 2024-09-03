@@ -1,0 +1,37 @@
+body {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container {
+    display: grid;
+    background-color: lightblue;
+    width: 500px;
+    padding: 10px;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+    margin: 20px;
+}
+
+.container > div {
+    display: flex;
+    background-color: white;
+    padding: 25px;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+
+.eight {
+    grid-column: 2 / span 2;
+}
+
+.one {
+    grid-row: 1 / span 2;
+}
+
+.griglia-2x5 {
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: 100px 300px;
+    justify-content: space-evenly;
+}
