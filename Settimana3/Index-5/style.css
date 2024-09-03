@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     display: flex;
     flex-wrap: wrap;
@@ -34,4 +40,16 @@ body {
     grid-template-columns: auto auto auto auto auto;
     grid-template-rows: 100px 300px;
     justify-content: space-evenly;
+}
+
+@media screen and (max-width: 768px){
+    body {
+        background-color: blue;
+    }
+}
+
+.fullsceen {
+    background-color: rgb(141, 88, 192);
+    width: 100vw;
+    height: 100vh;
 }
