@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    background-color: lightblue;
+    width: 500px;
+    padding: 10px;
+    grid-template-columns: auto auto auto auto;
+    gap: 10px;
+    margin: 20px;
+}
+
+.container > div {
+    display: flex;
+    background-color: white;
+    padding: 25px;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+
+.equal {
+    grid-row: span 2;
+}
+
+@media  (max-width: 378px) {
+    .wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    .container {
+        background-color: #c1bfbf;
+    }
+
+    .container > div {
+        padding: 20px;
+        font-size: 22px;
+    }
+
+    .equal {
+        background-color: #9bd5e9 !important;
+    }
+}
