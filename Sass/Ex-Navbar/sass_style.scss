@@ -9,15 +9,13 @@ $justify-center: center;
 }
 
 nav {
-    padding: 1rem;
+    padding: 1.4rem;
 }
 
 .wrapper {
     display: flex;
     justify-content: $justify-center;
-}
 
-.wrapper {
     .container {
         max-width: 1200px;
         width: 100%;
@@ -30,6 +28,11 @@ nav {
             padding: 1.3rem;
             &:hover {
                 color: $red-color;
+            }
+            &:last-child {
+                @extend .navbar ;
+                background-color: #e7e7e7;
+                border: 2px solid #333333; 
             }
         }
     }

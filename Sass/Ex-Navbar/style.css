@@ -5,27 +5,30 @@
 }
 
 nav {
-  padding: 1rem;
+  padding: 1.4rem;
 }
 
 .wrapper {
   display: flex;
   justify-content: center;
 }
-
 .wrapper .container {
   max-width: 1200px;
   width: 100%;
   display: flex;
   justify-content: center;
 }
-.wrapper .container .navbar a {
+.wrapper .container .navbar a, .wrapper .container .navbar a:last-child a {
   text-decoration: none;
   font-size: 18px;
   padding: 1.3rem;
 }
 .wrapper .container .navbar a:hover {
   color: red;
+}
+.wrapper .container .navbar a:last-child {
+  background-color: #e7e7e7;
+  border: 2px solid #333333;
 }
 
 /*# sourceMappingURL=style.css.map */
