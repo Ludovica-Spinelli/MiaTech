@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    padding: 1rem;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper {
+    .container {
+        max-width: 1200px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        .navbar a {
+            text-decoration: none;
+            font-size: 18px;
+            padding: 1.3rem;
+            &:hover {
+                color: #ff0000;
+            }
+        }
+    }
+}
