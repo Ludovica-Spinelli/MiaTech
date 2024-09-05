@@ -17,6 +17,7 @@ nav {
   width: 100%;
   display: flex;
   justify-content: center;
+  margin: 0 auto;
 }
 .wrapper .container .navbar a, .wrapper .container .navbar a:last-child a {
   text-decoration: none;
@@ -29,6 +30,17 @@ nav {
 .wrapper .container .navbar a:last-child {
   background-color: #e7e7e7;
   border: 2px solid #333333;
+}
+.wrapper .container .section1 {
+  display: flex;
+  margin-top: 3rem;
+  gap: 1rem;
+}
+.wrapper .container .section1 div {
+  width: 100%;
+}
+.wrapper .container .section1 .smaller {
+  width: 33.3333333333%;
 }
 
 /*# sourceMappingURL=style.css.map */
