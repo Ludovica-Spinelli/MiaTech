@@ -41,6 +41,9 @@ nav {
 }
 .wrapper .container .section1 .smaller {
   width: 33.3333333333%;
+  font-size: 0.6666666667em;
 }
+
+/* @include dark; */
 
 /*# sourceMappingURL=style.css.map */

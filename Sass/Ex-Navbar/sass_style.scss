@@ -1,8 +1,42 @@
 @import "colors";
 
+$base-font-size: 16px;
 $global-font-size: 18px;
 $justify-center: center;
 $standard-width: 100%;
+
+@function to-em($value, $base: $base-font-size){
+    @return calc(($value / $base) * 1em);
+}
+
+@mixin dark {
+    nav {
+        background-color: $dark-background-nav;
+    }
+
+    .navbar {
+        a {
+            color: $white-color;
+            &:hover {
+                color: $dark-hover-nav;
+            }
+        }
+    }
+    
+}
+
+@mixin light {
+    a {
+        &:hover {
+            color: $red-color;
+        }
+        &:last-child {
+            @extend .navbar ;
+            background-color: $contact-light-background;
+            border: 2px solid $border; 
+        }
+    }
+}
 
 * {
     margin: 0;
@@ -25,18 +59,14 @@ nav {
         justify-content: $justify-center;
         margin: 0 auto;
 
-        .navbar a {
-            text-decoration: none;
-            font-size: $global-font-size;
-            padding: 1.3rem;
-            &:hover {
-                color: $red-color;
+        .navbar {
+            a {
+                text-decoration: none;
+                font-size: $global-font-size;
+                padding: 1.3rem;
             }
-            &:last-child {
-                @extend .navbar ;
-                background-color: $background;
-                border: 2px solid $border; 
-            }
+            @include light;
+            
         }
 
         .section1 {
@@ -50,7 +80,10 @@ nav {
 
             .smaller{
                 width: calc($standard-width / 3);
+                font-size: to-em(12px, $global-font-size);
             }
         }
     }
 }
+
+/* @include dark; */
