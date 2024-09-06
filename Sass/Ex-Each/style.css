@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  padding: 1.4rem;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+.wrapper .container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+.wrapper .container .navbar a, .wrapper .container .navbar a:last-child a {
+  text-decoration: none;
+  font-size: 18px;
+  padding: 1.3rem;
+}
+.wrapper .container .navbar a:hover {
+  color: red;
+}
+.wrapper .container .navbar a:last-child {
+  background-color: #e7e7e7;
+  border: 2px solid #333333;
+}
+.wrapper .container .section1 {
+  display: flex;
+  margin-top: 3rem;
+  gap: 1rem;
+}
+.wrapper .container .section1 div {
+  width: 100%;
+}
+.wrapper .container .section1 div:nth-child(1) {
+  background-color: #ee940e;
+}
+.wrapper .container .section1 div {
+  width: 100%;
+}
+.wrapper .container .section1 div:nth-child(2) {
+  background-color: #a5670a;
+}
+.wrapper .container .section1 .smaller {
+  width: 33.3333333333%;
+  font-size: 0.6666666667em;
+}
+
+/* @include dark; */
+.color-green {
+  color: green;
+}
+
+.color-blue {
+  color: blue;
+}
+
+.color-pink {
+  color: pink;
+}
+
+.color-brown {
+  color: brown;
+}
+
+/*# sourceMappingURL=style.css.map */

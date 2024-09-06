@@ -1,0 +1,120 @@
+$red-color: red;
+$dark-background-nav: #000000;
+$dark-hover-nav: yellow;
+$white-color: white;
+$contact-light-background: #e7e7e7;
+$border: #333333; 
+$color-darker: #f5b453;
+$colors: green, blue, pink, brown;
+
+$base-font-size: 16px;
+$global-font-size: 18px;
+$justify-center: center;
+$standard-width: 100%;
+$noHover: 1;
+
+@function to-em($value, $base: $base-font-size){
+    @return calc(($value / $base) * 1em);
+}
+
+@mixin dark {
+    nav {
+        background-color: $dark-background-nav;
+    }
+
+    .navbar {
+        a {
+            color: $white-color;
+            @if $noHover == 1 {
+                &:hover {
+                    color: $dark-hover-nav;
+                } 
+            } @else {
+                &:hover {
+                    color: none;
+                } 
+            }
+        }
+    }
+    
+}
+
+@mixin light {
+    a {
+        @if $noHover == 1 {
+            &:hover {
+                color: $red-color;
+            }           
+        } @else {
+            &:hover {
+                color: none;
+            } 
+        } 
+        &:last-child {
+            @extend .navbar ;
+            background-color: $contact-light-background;
+            border: 2px solid $border; 
+        }       
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    padding: 1.4rem;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: $justify-center;
+
+    .container {
+        max-width: 1200px;
+        width: 100%;
+        display: flex;
+        justify-content: $justify-center;
+        margin: 0 auto;
+
+        .navbar {
+            a {
+                text-decoration: none;
+                font-size: $global-font-size;
+                padding: 1.3rem;
+            }
+            @include light;
+            
+        }
+
+        .section1 {
+            display: flex;
+            margin-top: 3rem;
+            gap: 1rem;
+
+            @for $i from 1 through 2 {
+                div {
+                    width: $standard-width;
+                    &:nth-child(#{$i}) {
+                        background-color: darken($color: $color-darker, $amount: $i * 15%)
+                    }
+                }
+            }
+            
+            .smaller{
+                width: calc($standard-width / 3);
+                font-size: to-em(12px, $global-font-size);
+            }
+        }
+    }
+}
+
+/* @include dark; */
+
+@each $color in $colors {
+    .color-#{"" + $color} {
+        color: $color;
+    }
+} 
