@@ -4,6 +4,7 @@ $base-font-size: 16px;
 $global-font-size: 18px;
 $justify-center: center;
 $standard-width: 100%;
+$noHover: 1;
 
 @function to-em($value, $base: $base-font-size){
     @return calc(($value / $base) * 1em);
@@ -17,8 +18,14 @@ $standard-width: 100%;
     .navbar {
         a {
             color: $white-color;
-            &:hover {
-                color: $dark-hover-nav;
+            @if $noHover == 1 {
+                &:hover {
+                    color: $dark-hover-nav;
+                } 
+            } @else {
+                &:hover {
+                    color: none;
+                } 
             }
         }
     }
@@ -27,14 +34,20 @@ $standard-width: 100%;
 
 @mixin light {
     a {
-        &:hover {
-            color: $red-color;
-        }
+        @if $noHover == 1 {
+            &:hover {
+                color: $red-color;
+            }           
+        } @else {
+            &:hover {
+                color: none;
+            } 
+        } 
         &:last-child {
             @extend .navbar ;
             background-color: $contact-light-background;
             border: 2px solid $border; 
-        }
+        }       
     }
 }
 
@@ -74,10 +87,15 @@ nav {
             margin-top: 3rem;
             gap: 1rem;
 
-            div {
-                width: $standard-width;
+            @for $i from 1 through 2 {
+                div {
+                    width: $standard-width;
+                    &:nth-child(#{$i}) {
+                        background-color: darken($color: $color-darker, $amount: $i * 15%)
+                    }
+                }
             }
-
+            
             .smaller{
                 width: calc($standard-width / 3);
                 font-size: to-em(12px, $global-font-size);

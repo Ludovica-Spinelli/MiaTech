@@ -39,6 +39,15 @@ nav {
 .wrapper .container .section1 div {
   width: 100%;
 }
+.wrapper .container .section1 div:nth-child(1) {
+  background-color: #ee940e;
+}
+.wrapper .container .section1 div {
+  width: 100%;
+}
+.wrapper .container .section1 div:nth-child(2) {
+  background-color: #a5670a;
+}
 .wrapper .container .section1 .smaller {
   width: 33.3333333333%;
   font-size: 0.6666666667em;
