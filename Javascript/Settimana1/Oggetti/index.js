@@ -38,17 +38,26 @@ function outerFunction(x, initialValue) {
 let value = outerFunction(5, 2)(5);
 console.log(value);
 
-/* function createCounter() {
+function createCounter() {
+    let count = 0;
+
     return objCount = {
-        count: undefined,
         method1: increment = () => {
-            count ++;
+            count++;
+            return count;
         },
         method2: decrement = () => {
             count--;
+            return count;
         },
     }
-} */
+}
+
+const count = createCounter();
+count.method1();
+console.log(count.method1());
+count.method2();
+console.log(count.method2());
 
 const student = {
     name: "Gino",
@@ -106,3 +115,27 @@ words.sort((a, b) => {
 })
 
 console.log(words);
+
+/* class Person {
+    #age;
+
+    constructor(name = "Jon", surname = "Doe", age = 10) {
+        this.name = name;
+        this.surname = surname;
+        this.#age = age;
+    }
+
+    set compleanno(number) {
+        this.#age = number;
+    }
+
+    get displayAge() {
+        console.log(this.#age);
+    }
+}
+
+const ludovica = new Person ();
+console.log(ludovica);
+
+ludovica.compleanno = 26;
+ludovica.displayAge; */
