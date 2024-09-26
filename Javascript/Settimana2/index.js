@@ -9,7 +9,7 @@ class Automobile {
     }
 
     descrizione() {
-        return `L'auto è una ${this.marca} ${this.modello} del ${this.anno}`;
+        return `L'automezzo è una ${this.marca} ${this.modello} del ${this.anno}`;
     }
 
     aggiungiChilometri = (km) => {
@@ -61,6 +61,11 @@ class Automobile {
     set setChilometraggio(km) {
         if(km >= this.chilometraggio) this.chilometraggio = km;
     }
+
+    static verificaIstanza(obj, classe) {
+        if(obj instanceof classe) return `L'oggetto passato è un'istanza di ${classe.name}`;
+        else return `L'oggetto passato NON è un'istanza di ${classe.name}`;
+    }
 }
 
 class Elettrica extends Automobile {
@@ -78,6 +83,24 @@ class Elettrica extends Automobile {
     }
 }
 
+class Camion extends Automobile {
+    constructor(marca, modello, anno, chilometraggio, contatoreChiamate = 0, caricoMassimo, caricoAttuale) {
+        super(marca, modello, anno, chilometraggio, contatoreChiamate);
+        this.caricoMassimo = caricoMassimo;
+        this.caricoAttuale = caricoAttuale;
+    }
+
+    descrizione() {
+        return `${super.descrizione()}, con carico massimo di ${this.caricoMassimo}kg`;
+    }
+
+    carica = (kg) => {
+        if(kg <= this.caricoMassimo && (this.caricoAttuale + kg) <= this.caricoMassimo) {
+            this.caricoAttuale = this.caricoAttuale + kg;
+        }
+    }
+}
+
 const modus = new Automobile ("Renault", "Modus", 2009);
 
 console.log(modus.descrizione());
@@ -90,7 +113,7 @@ console.log(austral.descrizione());
 austral.ricarica(100);
 
 Automobile.prototype.saluta = function() {
-    return `Buongiorno sono l'auto ${this.marca} ${this.modello}`;
+    return `Buongiorno sono l'automezzo ${this.marca} ${this.modello}`;
 }
 
 console.log(modus.saluta());
@@ -106,3 +129,19 @@ modus.aggiungiChilometri(30000);
 console.log(modus.mostraContatoreChiamate());
 modus.setChilometraggio = 200000;
 console.log(modus.getChilometraggioAttuale);
+
+const camion = new Camion("Fiat", "Modello", 2017, 80000, undefined, 700, 0);
+
+console.log(camion.descrizione());
+camion.carica(500);
+console.log(camion.caricoAttuale);
+camion.carica(100);
+console.log(camion.caricoAttuale)
+camion.carica(400);
+console.log(camion.caricoAttuale);
+
+console.log(modus instanceof Automobile);
+console.log(camion instanceof Camion);
+
+console.log(Automobile.verificaIstanza(modus, Automobile));
+console.log(Automobile.verificaIstanza(modus, Camion));
