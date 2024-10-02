@@ -63,7 +63,7 @@ const saluto = () => {
     console.log("Ciao!");
 }
 
-/* setTimeout(saluto, 3000);
+setTimeout(saluto, 3000);
 
 const twoSeconds = setInterval(saluto, 2000);
 setTimeout(() => {
@@ -73,7 +73,7 @@ setTimeout(() => {
 const oneSecond = setInterval(saluto, 1000);
 setTimeout(() => {
     clearInterval(oneSecond);
-}, 5000) */
+}, 5000)
 
 const divisione = (divisore, dividendo) => {
     try {
