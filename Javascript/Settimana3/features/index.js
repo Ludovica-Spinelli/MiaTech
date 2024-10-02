@@ -92,8 +92,23 @@ console.log(uno);
 console.log(due);
 console.log(resto);
 
-const {titolo, autore, ...altreInfo} = eragon;
+const {titolo, autore, ...altreInfo} = eragon;      // combinazione di spread e rest per mettere alcune proprietà in variabili e in resto in un nuovo oggetto
 
 console.log(titolo);
 console.log(autore);
 console.log(altreInfo);
+
+const str = JSON.stringify(eragon);
+console.log(str);
+
+const rettangolo = `{"base": 30,"altezza": 20}`;
+
+console.log(rettangolo);
+const objectRettangolo = JSON.parse(rettangolo);
+console.log(objectRettangolo);
+
+const persone = `[{"nome": "Ludovica", "cognome": "Spinelli"}, {"nome": "Cristina", "cognome": "Lipari"}, {"nome": "Danilo", "cognome": "Spinelli"}]`;
+const objectPersone = JSON.parse(persone);
+objectPersone[objectPersone.length] = {nome: "Chiara", cognome: "Spinelli"};
+console.log(objectPersone);
+
