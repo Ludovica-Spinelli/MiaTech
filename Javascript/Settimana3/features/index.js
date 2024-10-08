@@ -33,7 +33,7 @@ const user = {
     console.log(secondName);
     console.log(profession); */
 
-const {firstName:nome, secondName:cognome, age:eta, profession:professione} = user;     // spread con nomi di proprietà diversi dall'oggetto originale
+const {firstName:nome, secondName:cognome, age:eta, profession:professione} = user;     // destructuring con nomi di proprietà diversi dall'oggetto originale
 console.log(nome);
 console.log(cognome);
 console.log(eta);
@@ -46,7 +46,7 @@ const volpe = {
     lunghezza: undefined,
 }
 
-const {nome: animale, colori, alimentazione = "carnivoro", lunghezza = 1.5 } = volpe;   // spread con modifica di valori undefined con valori predefiniti
+const {nome: animale, colori, alimentazione = "carnivoro", lunghezza = 1.5 } = volpe;   // destructuring con modifica di valori undefined con valori predefiniti
 console.log(animale);
 console.log(colori);
 console.log(alimentazione);
@@ -92,7 +92,7 @@ console.log(uno);
 console.log(due);
 console.log(resto);
 
-const {titolo, autore, ...altreInfo} = eragon;      // combinazione di spread e rest per mettere alcune proprietà in variabili e in resto in un nuovo oggetto
+const {titolo, autore, ...altreInfo} = eragon;      // combinazione di spread e rest per mettere alcune proprietà in variabili e il resto in un nuovo oggetto
 
 console.log(titolo);
 console.log(autore);
