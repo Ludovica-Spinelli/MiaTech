@@ -85,7 +85,7 @@ const fetchDataPOST = async () => {
 
 // ESERCIZIO: Gestione degli errori con async e await
 
-const fetchPOSTRifiutata = async () => {
+const fetchGETRifiutata = async () => {
     try {
         const response = await fetch("https://jsonplaceholder.typicode.com/pos");
         if(!response.ok) throw new Error("Errore nel reperimento dati");
@@ -97,7 +97,7 @@ const fetchPOSTRifiutata = async () => {
 const visualizzaDati = async () => {
     await fetchDataGET();
     await fetchDataPOST();
-    await fetchPOSTRifiutata();
+    await fetchGETRifiutata();
 }
 
 visualizzaDati();

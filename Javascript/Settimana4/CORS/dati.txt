@@ -1,0 +1,14 @@
+[
+  {
+    "country": "US",
+    "country_3": "USA",
+    "ip": "8.8.8.8",
+    "name": "United States"
+  },
+  {
+    "country": "US",
+    "country_3": "USA",
+    "ip": "198.35.26.96",
+    "name": "United States"
+  }
+]
