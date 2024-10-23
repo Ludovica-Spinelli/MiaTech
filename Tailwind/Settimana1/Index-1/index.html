@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            myTheme: 'class',
+          theme: {
+            extend: {
+              colors: {
+                lilla: 'rgb(173 118 172)',
+                myPeach: {
+                    '100': "rgb(226 182 65)",
+                    '200': "rgb(233 173 13)",
+                    '300': "rgb(241 173 54)",
+                    '400': "rgb(238 156 14)",
+                    '500': "rgb(238 151 0)",
+                    '600': "rgb(241 134 34)",
+                    '700': "rgb(240 115 0)",
+                    '800': "rgb(244 101 22)",
+                    '900': "rgb(241 86 0)",
+                },
+                cielo: '#1077b1',
+                sabbia: '#e8c490',
+              },
+              margin: {
+                m_px13: '13px',
+              },
+              padding: {
+                p_px13: '13px',
+              },
+            },
+          },
+        }
+      </script>
+</head>
+<body>
+    <header class="p-4 bg-lilla">
+        <div class="flex justify-center">
+            <h1 class="text-4xl">Tanti Lorem</h1>
+        </div>
+    </header>
+    <main class="flex">
+        <div class="w-1/6 p-4">
+            <h3 class="text-xl">Indice:</h3>
+            <ul class="list-disc list-inside mt-2">
+                <li class="border-2 border-cielo pl-0.5 text-myPeach-400">
+                    <a href="">Lorem 1</a>
+                </li>
+                <li class="border-2 border-cielo pl-0.5 text-myPeach-400">
+                    <a href="">Lorem 2</a>
+                </li>
+                <li class="border-2 border-cielo pl-0.5 text-myPeach-400">
+                    <a href="">Lorem 3</a>
+                </li>
+                <li class="border-2 border-cielo pl-0.5 text-myPeach-400">
+                    <a href="">Lorem 4</a>
+                </li>
+            </ul>
+        </div>
+        <div class="flex flex-col container mx-auto leading-8 bg-slate-200 m_px13">
+            <div class="p-4">
+                <h2 class="text-2xl">Lorem 1</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet beatae distinctio et. Qui distinctio animi ipsa sequi. Sunt repellat ipsum deserunt. Minus eligendi voluptates ex a praesentium at esse molestiae.</p>
+            </div>
+            <div class="p-4">
+                <h2 class="text-2xl">Lorem 2</h2>
+                <p class="text-lilla">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet beatae distinctio et. Qui distinctio animi ipsa sequi. Sunt repellat ipsum deserunt. Minus eligendi voluptates ex a praesentium at esse molestiae.</p>
+            </div>
+            <div class="p-4">
+                <h2 class="text-2xl">Lorem 3</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet beatae distinctio et. Qui distinctio animi ipsa sequi. Sunt repellat ipsum deserunt. Minus eligendi voluptates ex a praesentium at esse molestiae.</p>
+            </div>
+            <div class="p-4">
+                <h2 class="text-2xl">Lorem 4</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet beatae distinctio et. Qui distinctio animi ipsa sequi. Sunt repellat ipsum deserunt. Minus eligendi voluptates ex a praesentium at esse molestiae.</p>
+            </div>
+            <div class="m-m_px13">
+                <button class="mr-2 p-p_px13 bg-myPeach-200 rounded-lg border-4 border-lilla">Button 1</button>
+                <button class="mr-2 p-p_px13 bg-myPeach-400 rounded-lg border-4 border-lilla">Button 2</button>
+                <button class="mr-2 p-p_px13 bg-myPeach-600 rounded-lg border-4 border-lilla">Button 3</button>
+                <button class="mr-2 p-p_px13 bg-myPeach-800 rounded-lg border-4 border-lilla">Button 4</button>
+            </div>
+        </div>
+        <div class="flex flex-col w-1/4 p-2">
+            <h3 class="text-xl text-cielo">Notizie e luoghi da visitare:</h3>
+            <div class="w-52 aspect-square px-0.5 pb-4 mt-2 bg-sabbia">
+                <img src="./Foto-Slide-Home-Parigi.jpg" alt="Parigi" />
+                <div>
+                    <a class="lowercase" href="https://www.hashtagmagazine.it/la-citta-della-belle-epoque-seducente-e-romantica-parigi/">LA CITTÀ DELLA BELLE ÉPOQUE, SEDUCENTE E ROMANTICA: PARIGI</a>
+                </div>
+            </div>
+            <div class="w-52 aspect-square px-0.5 pb-4 mt-2 bg-sabbia">
+                <img src="./londra.jpg" alt="Londra" />
+                <div>
+                    <a href="https://www.viaggilondra.it/">Viaggi Londra: cosa vedere, offerte e tour</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="bg-blue-500 p-p_px13 fixed bottom-0 w-auto">
+        <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium ducimus impedit et, id non ratione. Minima illum voluptatum laborum amet ex cumque, itaque eos reiciendis. Tempore eveniet cupiditate consequuntur soluta? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium ducimus impedit et, id non ratione. Minima illum voluptatum laborum amet ex cumque, itaque eos reiciendis. Tempore eveniet cupiditate consequuntur soluta?</p>
+    </footer>
+</body>
+</html>
