@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                lilla: 'rgb(173 118 172)',
+                cielo: '#1077b1',
+              },
+            },
+          },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer components {
+            
+        }
+    </style>
+</head>
+<body>
+    <main class="flex">
+        <div class="w-1/3 h-screen p-4 bg-lilla">
+            Col 1
+            <div class="flex flex-wrap h-full">
+                <div class="p-6 bg-lime-300 border border-black">Item 1</div>
+                <div class="p-6 bg-lime-300 border border-black"> Item 2</div>
+                <div class="p-6 bg-lime-300 border border-black"> Item 3</div>
+                <div class="p-6 bg-lime-300 border border-black"> Item 4</div>
+                <div class="p-6 bg-lime-300 border border-black"> Item 5</div>
+            </div>
+        </div>
+        <div class="w-1/3 h-screen p-4 bg-slate-200">
+            Col 2
+            <div class="flex flex-col justify-center items-center h-full">
+                <div class="p-6 bg-lime-300 border border-black">Item 1</div>
+                <div class="p-6 bg-lime-300 border border-black"> Item 2</div>
+                <div class="p-6 bg-lime-300 border border-black"> Item 3</div>
+            </div>
+        </div>
+        <div class="w-1/3 h-screen p-4 bg-cielo">
+            Col 3
+        </div>
+    </main>
+</body>
+</html>
