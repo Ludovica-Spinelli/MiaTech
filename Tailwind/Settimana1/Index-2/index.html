@@ -35,15 +35,30 @@
             },
           },
         }
-      </script>
+    </script>
+    <style type="text/tailwindcss">
+        @layer components {
+            .close {
+                visibility: hidden;
+            }
+        }
+    </style>
 </head>
 <body class="">
-    <header class="p-4 bg-lilla dark:bg-gray-700 dark:text-white dark:border-2 dark:border-white">
-        <div class="flex justify-center">
+    <header class="flex items-center p-4 bg-lilla dark:bg-gray-700 dark:text-white dark:border-2 dark:border-white">
+        <div class="flex justify-center flex-1">
             <h1 class="text-4xl">Tanti Lorem</h1>
         </div>
+        <button id="darkModeToggle" class="flex space-between items-center max-h-7 px-1 bg-white rounded-2xl border border-black">
+            <div id="sun">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48" class="w-6 h-6">
+                <path fill="#FF9800" d="M11 11H37V37H11z"></path><path fill="#FF9800" d="M11.272 11.272H36.728V36.728H11.272z" transform="rotate(-45.001 24 24)"></path><path fill="#FFEB3B" d="M13,24c0,6.077,4.923,11,11,11c6.076,0,11-4.923,11-11s-4.924-11-11-11C17.923,13,13,17.923,13,24"></path>
+                </svg>
+            </div>
+            <div id="moon" class="close"><img src="https://img.icons8.com/plumpy/24/moon-satellite.png" alt="moon" class="w-5 h-5 m-0.5"></div>
+        </button>
     </header>
-    <main class="flex h-screen dark:bg-gray-700 dark:text-white">
+    <main class="flex dark:bg-gray-700 dark:text-white">
         <div class="w-1/6 p-4 dark:border-2 dark:border-white">
             <h3 class="text-xl">Indice:</h3>
             <ul class="list-disc list-inside mt-2">
@@ -78,11 +93,33 @@
                 <h2 class="text-2xl font-bold	">Lorem 4</h2>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet beatae distinctio et. Qui distinctio animi ipsa sequi. Sunt repellat ipsum deserunt. Minus eligendi voluptates ex a praesentium at esse molestiae.</p>
             </div>
+            <form class="flex flex-col p-5" action="/" method="post">
+                <div>
+                    <label for="name" class="w-32">Nome</label>
+                    <input type="text" name="name" id="name" class="border border-black rounded-lg mb-2 ml-4 focus:outline-none focus:border-blue-400 focus:ring active:bg-lime-500">
+                </div>
+                <div>
+                    <label for="surname" class="w-32">Cognome</label>
+                    <input type="text" name="surname" id="surname" class="border border-black rounded-lg mb-2 ml-4 focus:outline-none focus:border-blue-400 focus:ring active:bg-lime-500">
+                </div>
+                <div>
+                    <label for="eta" class="w-32">Età</label>
+                    <input type="date" name="eta" id="eta" class="border border-black rounded-lg mb-2 ml-4 focus:outline-none focus:border-blue-400 focus:ring active:bg-lime-500">
+                </div>
+                <div>
+                    <label for="citta" class="w-32">Città di Nascita</label>
+                    <input type="text" name="citta" id="citta" disabled class="border border-black rounded-lg mb-2 ml-4 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none disabled:cursor-no-drop">
+                </div>
+                <div>
+                    <button id="buttonSub" type="submit" disabled class="p-2 border-2 border-lime-800 rounded bg-lime-300 active:bg-lime-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none disabled:cursor-no-drop">Invia</button>
+                    <button id="btnReset" type="reset" class="p-2 border-2 border-lime-800 rounded bg-lime-300 active:bg-lime-500">Reset</button>
+                </div>
+            </form>
             <div class="m-m_px13">
-                <button class="mr-2 p-p_px13 bg-myPeach-200 rounded-lg border-4 border-lilla dark:bg-gray-500 dark:border-none">Button 1</button>
-                <button class="mr-2 p-p_px13 bg-myPeach-400 rounded-lg border-4 border-lilla dark:bg-gray-500 dark:border-none">Button 2</button>
-                <button class="mr-2 p-p_px13 bg-myPeach-600 rounded-lg border-4 border-lilla dark:bg-gray-500 dark:border-none">Button 3</button>
-                <button class="mr-2 p-p_px13 bg-myPeach-800 rounded-lg border-4 border-lilla dark:bg-gray-500 dark:border-none">Button 4</button>
+                <button class="mr-2 p-p_px13 bg-myPeach-200 rounded-lg border-4 border-lilla hover:bg-red-200 dark:bg-gray-500 dark:border-none">Button 1</button>
+                <button class="mr-2 p-p_px13 bg-myPeach-400 rounded-lg border-4 border-lilla hover:border-6 hover:border-white dark:bg-gray-500 dark:border-none">Button 2</button>
+                <button class="mr-2 p-p_px13 bg-myPeach-600 rounded-lg border-4 border-lilla hover:bg-lime-700 dark:bg-gray-500 dark:border-none">Button 3</button>
+                <button class="mr-2 p-p_px13 bg-myPeach-800 rounded-lg border-4 border-lilla hover:bg-transparent dark:bg-gray-500 dark:border-none">Button 4</button>
             </div>
         </div>
         <div class="flex flex-col w-1/4 p-2 dark:border-2 dark:border-white">
@@ -104,5 +141,7 @@
     <footer class="bg-blue-500 p-p_px13 w-full z-50 dark:bg-gray-800 dark:text-white dark:border-2 dark:border-white">
         <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium ducimus impedit et, id non ratione. Minima illum voluptatum laborum amet ex cumque, itaque eos reiciendis. Tempore eveniet cupiditate consequuntur soluta?</p>
     </footer>
+
+    <script src="./script.js"></script>
 </body>
 </html>
