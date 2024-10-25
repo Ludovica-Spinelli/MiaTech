@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+          theme: {
+            extend: {
+              colors: {
+                lilla: 'rgb(173 118 172)',
+                myPeach: {
+                    '100': "rgb(226 182 65)",
+                    '200': "rgb(233 173 13)",
+                    '300': "rgb(241 173 54)",
+                    '400': "rgb(238 156 14)",
+                    '500': "rgb(238 151 0)",
+                    '600': "rgb(241 134 34)",
+                    '700': "rgb(240 115 0)",
+                    '800': "rgb(244 101 22)",
+                    '900': "rgb(241 86 0)",
+                },
+                cielo: '#1077b1',
+                sabbia: '#e8c490',
+              },
+            },
+          },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer components {
+            .btn {
+                border: 3px solid black;
+                border-radius: 5%;
+                padding: 10px;
+            }
+
+            .card {
+                @apply w-52 aspect-square px-0.5 pb-4 mt-2 bg-sabbia;
+            }
+
+            .btn-plus {
+                @apply btn border-lilla mr-2 bg-myPeach-200 hover:bg-transparent;
+            }
+
+            .btn-super {
+                @apply btn btn-plus p-8 text-white font-bold text-2xl bg-blue-500 hover:bg-blue-800;
+            }
+        }
+    </style>
+</head>
+<body class="">
+    <header class="flex items-center p-4 bg-lilla dark:bg-gray-700 dark:text-white dark:border-2 dark:border-white">
+        <div class="flex justify-center flex-1">
+            <h1 class="text-4xl">Tanti Lorem</h1>
+        </div>
+    </header>
+    <main class="flex dark:bg-gray-700 dark:text-white">
+        <div class="w-1/6 p-4 dark:border-2 dark:border-white">
+            <h3 class="text-xl">Indice:</h3>
+            <ul class="list-disc list-inside mt-2">
+                <li class="border-2 border-cielo pl-0.5 text-myPeach-400 dark:text-white dark:border-none">
+                    <a href="">Lorem 1</a>
+                </li>
+            </ul>
+        </div>
+        <div class="flex flex-col container mx-auto leading-8 bg-slate-200 m_px13 dark:bg-gray-700 dark:border-2 dark:border-white">
+            <div class="p-4">
+                <h2 class="text-2xl font-bold	">Lorem 1</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet beatae distinctio et. Qui distinctio animi ipsa sequi. Sunt repellat ipsum deserunt. Minus eligendi voluptates ex a praesentium at esse molestiae.</p>
+            </div>
+            <form class="flex flex-col p-5" action="/" method="post">
+                <div>
+                    <label for="name" class="w-32">Nome</label>
+                    <input type="text" name="name" id="name" class="border border-black rounded-lg mb-2 ml-4 focus:outline-none focus:border-blue-400 focus:ring active:bg-lime-500">
+                </div>
+                <div>
+                    <button id="buttonSub" type="submit" class="btn bg-lime-300 active:bg-lime-500 ">Invia
+                    </button>
+                    <button id="btnReset" type="reset" class="btn bg-lime-300 active:bg-lime-500">Reset
+                    </button>
+                </div>
+            </form>
+            <div class="m-m_px13">
+                <button class=" btn btn-plus">Button 1</button>
+                <button class="btn btn-plus">Button 2</button>
+                <button class="btn btn-plus">Button 3</button>
+                <button class="btn btn-plus">Button 4</button>
+                <button class="btn btn-super">Button 4</button>
+            </div>
+        </div>
+        <div class="flex flex-col w-1/4 p-2 dark:border-2 dark:border-white">
+            <h3 class="text-xl text-cielo dark:text-white">Notizie e luoghi da visitare:</h3>
+            <div class="card">
+                <img src="/Tailwind/Settimana1/Foto-Slide-Home-Parigi.jpg" alt="Parigi" />
+                <div>
+                    <a class="lowercase" href="https://www.hashtagmagazine.it/la-citta-della-belle-epoque-seducente-e-romantica-parigi/">LA CITTÀ DELLA BELLE ÉPOQUE, SEDUCENTE E ROMANTICA: PARIGI</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="/Tailwind/Settimana1/londra.jpg" alt="Londra" />
+                <div>
+                    <a href="https://www.viaggilondra.it/">Viaggi Londra: cosa vedere, offerte e tour</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
