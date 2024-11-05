@@ -1,11 +1,16 @@
 import Counter from './Counter'
-import HelloWorld from './HelloWorld'
+import LoginForm from './components/LoginForm'
+import TextInput from './components/TextInput'
+import UncontrolledInput from './components/UncontrolledInput'
 
 function App() {
 
   return (
     <>
       <Counter/>
+      <TextInput/>
+      <LoginForm/>
+      <UncontrolledInput/>
     </>
   )
 }
