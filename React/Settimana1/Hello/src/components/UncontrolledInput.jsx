@@ -1,15 +1,15 @@
 import { useRef } from "react"
 
 const UncontrolledInput = () => {
-    const inputRef = useRef("Ciao");
+    const inputRef = useRef();
 
     const showValue = () => {
-        alert(inputRef.current);
+        alert(inputRef.current.value);
     }
 
     return (
         <>
-            <input type="text" value={inputRef.current}/>
+            <input type="text" ref={inputRef}/>
             <button onClick={showValue}>Value</button>
         </>
     )
