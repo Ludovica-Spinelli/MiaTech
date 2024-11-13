@@ -1,4 +1,4 @@
-import Counter from './Counter'
+import Counter from './components/Counter'
 import Card from './components/Card'
 import ItemList from './components/ItemList'
 import LoginForm from './components/LoginForm'
