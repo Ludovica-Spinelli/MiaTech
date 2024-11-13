@@ -12,18 +12,25 @@ const filterLogic = {
     }
 };
 
-export const useFilteredTodos = (data, filter) => {
-    const [todo, setTodo] = useState(data);
+const searchLogic = (data, word) => {
+    return data.filter(item => item.title.match(new RegExp(word, "ig")));
+};
 
-    console.log(data);
+export const useFilteredTodos = (data, filter, word = "") => {
+    const [todo, setTodo] = useState(data);
 
     const filterData = () => {
         setTodo(filterLogic[filter](data));
     }
 
+    const searchData = () => {
+        if(word) setTodo(searchLogic(data, word));
+    }
+
     useEffect(() => {
         filterData();
-    }, [filter]);
+        searchData();
+    }, [data, filter, word]);
 
     if(data) return (todo);
 }
