@@ -1,11 +1,13 @@
-import { useEffect, useState } from 'react'
 import ToDoList from './components/ToDoList'
+import TodoProvider from './providers/TodoProvider.jsx'
 
 function App() {
 
   return (
     <>
-      <ToDoList/>
+      <TodoProvider>
+        <ToDoList />
+      </TodoProvider>
     </>
   )
 }
