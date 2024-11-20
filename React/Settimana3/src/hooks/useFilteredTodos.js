@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-const filterLogic = {
+/* const filterLogic = {
     DONE: (data) => {
         return data.filter(item => item.completed);
     },
@@ -10,27 +10,27 @@ const filterLogic = {
     NONE: (data) => {
         return data;
     }
-};
+}; */
 
 const searchLogic = (data, word) => {
     return data.filter(item => item.title.match(new RegExp(word, "ig")));
 };
 
-export const useFilteredTodos = (data, filter, word = "") => {
+export const useFilteredTodos = (data, word = "") => {
     const [todo, setTodo] = useState(data);
 
-    const filterData = () => {
+   /*  const filterData = () => {
         setTodo(filterLogic[filter](data));
-    }
+    } */
 
     const searchData = () => {
         if(word) setTodo(searchLogic(data, word));
     }
 
     useEffect(() => {
-        filterData();
+/*         filterData(); */
         searchData();
-    }, [data, filter, word]);
+    }, [data, word]);
 
     if(data) return (todo);
 }

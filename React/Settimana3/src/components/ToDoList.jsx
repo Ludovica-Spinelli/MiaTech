@@ -1,42 +1,66 @@
 import { useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
 import { useFilteredTodos } from "../hooks/useFilteredTodos";
 import { TodoContext } from "../providers/TodoProvider";
+import { Link, useSearchParams } from "react-router-dom";
 
+const filterLogic = {
+    DONE: (data) => {
+        return data.filter(item => item.completed);
+    },
+    NOT_DONE: (data) => {
+        return data.filter(item => !item.completed);
+    },
+    NONE: (data) => {
+        return data;
+    }
+};
+
+const searchLogic = (data, word) => {
+    return data.filter(item => item.title.match(new RegExp(word, "ig")));
+};
 
 const ToDoList = () => {
     const { data, error, loading, reload } = useContext(TodoContext);
     const [filter, setFilter] = useState("NONE");
     const [search, setSearch] = useState();
-    const todo = useFilteredTodos(data, filter, search);
+    const [todo, setTodo] = useState(data);
     const inputRef = useRef();
+    const [query, setQuery] = useSearchParams();
 
     const handleFilter = (event) => {
         setFilter(event.target.value);
     };
 
+    const filteredTodo = useMemo(() => {
+        return filterLogic[filter](todo);
+    }, [filter]);
+
+    const filterData = () => {
+        setTodo(filteredTodo ? filteredTodo : data);
+    }
+
     const handleInputSearch = (event) => {
         setSearch(event.target.value);
+        setQuery({search: event.target.value});
+        console.log(query.get('search'));
     };
 
-    const valueSearched = useCallback(() => {
-        return search;
+    const searchData = useCallback(() => {
+        if(search) setTodo(searchLogic(data, search));
     }, [search]);
 
     const handleButtonSearch = (event) => {
         event.preventDefault();
     };
 
-    const filteredData = useMemo(() => {
-        return todo;
-    }, [todo]);
-
     useEffect(() => {
         inputRef.current.focus();
     }, []);
 
     useEffect(() => {
-
-    }, [filter, valueSearched()]);
+        filterData();
+        searchData();
+    }, [data, filter, search]);
 
     return (
         <>
@@ -65,7 +89,9 @@ const ToDoList = () => {
                 }
                 {
                     todo && todo.map((item) => {
-                        return <li key={item.id}>{item.userId} {item.id} {item.title} {item.completed.toString()}</li>
+                        return <li key={item.id}>{item.userId} {item.id} {item.title} {item.completed.toString()} 
+                                    <button><Link to={`/todo/${item.id}`}>View</Link></button> 
+                                </li>
 
                     })
                 }
