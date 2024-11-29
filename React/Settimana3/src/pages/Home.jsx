@@ -4,10 +4,8 @@ import TodoProvider from "../providers/TodoProvider"
 
 const Home = () => {
   return (
-    <>
-      
-        <ToDoList />
-      
+    <>     
+        <ToDoList />     
     </>
   )
 }

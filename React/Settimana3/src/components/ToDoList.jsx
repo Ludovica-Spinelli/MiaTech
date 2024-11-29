@@ -2,6 +2,8 @@ import { useCallback, useContext, useEffect, useMemo, useRef, useState } from "r
 import { useFilteredTodos } from "../hooks/useFilteredTodos";
 import { TodoContext } from "../providers/TodoProvider";
 import { Link, useSearchParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { completeTodo, update } from "../store/slices/todoSlice";
 
 const filterLogic = {
     DONE: (data) => {
@@ -20,10 +22,12 @@ const searchLogic = (data, word) => {
 };
 
 const ToDoList = () => {
-    const { data, error, loading, reload } = useContext(TodoContext);
+    const dispatch = useDispatch();
+/*     const { data, error, loading, reload } = useContext(TodoContext); */
+    const todos = useSelector((todo) => todo.todos);
     const [filter, setFilter] = useState("NONE");
     const [search, setSearch] = useState();
-    const [todo, setTodo] = useState(data);
+    const [dataView, setDataView] = useState();
     const inputRef = useRef();
     const [query, setQuery] = useSearchParams();
 
@@ -32,11 +36,11 @@ const ToDoList = () => {
     };
 
     const filteredTodo = useMemo(() => {
-        return filterLogic[filter](todo);
+        return filterLogic[filter](dataView);
     }, [filter]);
 
     const filterData = () => {
-        setTodo(filteredTodo ? filteredTodo : data);
+        setDataView(filteredTodo ? filteredTodo : todos);
     }
 
     const handleInputSearch = (event) => {
@@ -46,21 +50,37 @@ const ToDoList = () => {
     };
 
     const searchData = useCallback(() => {
-        if(search) setTodo(searchLogic(data, search));
+        if(search) setDataView(searchLogic(todos, search));
     }, [search]);
 
     const handleButtonSearch = (event) => {
         event.preventDefault();
     };
 
-    useEffect(() => {
-        inputRef.current.focus();
-    }, []);
+    const handleComplete = (id) => {
+        dispatch(completeTodo(id));
+      }
 
     useEffect(() => {
-        filterData();
+        async function getTodos() {
+          try {
+            const res = await fetch("https://jsonplaceholder.typicode.com/todos");
+            const data = await res.json();
+            dispatch(update(data));
+          } catch (error) {
+            console.error(error);
+          }
+        }
+        getTodos();
+        inputRef.current.focus();
+      }, []);
+
+    useEffect(() => {
+        /* filterData();
         searchData();
-    }, [data, filter, search]);
+        setDataView(todos); */
+
+    }, [todos, filter, search]);
 
     return (
         <>
@@ -82,15 +102,16 @@ const ToDoList = () => {
             </div>
             <ul> Todo List:
                 {
-                    loading && <p>Loading...</p>
+                    /* data.loading && <p>Loading...</p> */
                 }
                 {
-                    error && <p>{error}</p>
+                    /* data.error && <p>{data.error}</p> */
                 }
                 {
-                    todo && todo.map((item) => {
+                    todos && todos.map((item) => {
                         return <li key={item.id}>{item.userId} {item.id} {item.title} {item.completed.toString()} 
                                     <button><Link to={`/todo/${item.id}`}>View</Link></button> 
+                                    {!item.completed && <button onClick={() => handleComplete(item.id)}>Completed</button>}
                                 </li>
 
                     })

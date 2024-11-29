@@ -10,15 +10,15 @@ function App() {
 
   return (
     <>
-      <TodoProvider>
-        <Routes>
-          <Route path='/' element={<PublicLayout />}>
-            <Route path="" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/todo/:id" element={<SingleElement />} />
-          </Route>
-        </Routes>
-      </TodoProvider>
+        <TodoProvider>
+          <Routes>
+            <Route path='/' element={<PublicLayout />}>
+              <Route path="" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/todo/:id" element={<SingleElement />} />
+            </Route>
+          </Routes>
+        </TodoProvider>
     </>
   )
 }
