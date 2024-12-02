@@ -24,7 +24,7 @@ const searchLogic = (data, word) => {
 const ToDoList = () => {
     const dispatch = useDispatch();
 /*     const { data, error, loading, reload } = useContext(TodoContext); */
-    const todos = useSelector((todo) => todo.todos);
+    const todos = useSelector((state) => state.todo.todos);
     const [filter, setFilter] = useState("NONE");
     const [search, setSearch] = useState();
     const [dataView, setDataView] = useState();
