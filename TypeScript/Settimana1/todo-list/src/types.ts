@@ -8,9 +8,15 @@ export interface ToDo {
 export interface User {
     id: number,
     name: string,
-    email?: string
+    email?: string,
+    readonly todos?: readonly [ToDo]
 }
 
 export interface ToDoWithMetadata extends ToDo {
     metadata?: any
+}
+
+export interface Project {
+    users: User[],
+    todos: ToDo[]
 }
