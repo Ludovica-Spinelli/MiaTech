@@ -1,7 +1,9 @@
-import { ToDo } from "./types";
-import { User } from "./types";
+import { ToDo, TodoRecord, TodoStatus } from "./types";
+import { UserType } from "./types";
 import { ToDoWithMetadata } from "./types";
 import { Project } from "./types";
+import { User } from "./user";
+import { filterTodos } from "./utils";
 
 let todos:ToDo[] = [];
 
@@ -10,6 +12,7 @@ const addTodo = (title: string, metadata?: (string | object)) => {
         id: Date.now(),
         title: title,
         completed: false,
+        status: TodoStatus.Pending
     };
 
     return todo;
@@ -39,7 +42,7 @@ const parseInput = (input: unknown) => {
 
 const updateTodo = (todo: ToDo, updates: Partial<ToDo>) => {
     let newtodo = todos.find((element) => element.id == todo.id);
-    const i = todos.indexOf(todo);
+    const i = todos.indexOf(newtodo);
     todos[i] = {...todo, ...updates};
 }
 
@@ -51,7 +54,7 @@ const getToDoSummary = (todo: ToDo) => {
 const createProject = () => {
     const project: Project = {
         users: [{id: 1, name:"Ludovica", email:"ludovicaspinelli@gmail.com"}, {id: 2, name:"Ilaria", email:"ilariamammana@gmail.com"}],
-        todos: [{id: 1, title:"Login", completed:true, userId: 1}, {id: 2, title:"Navbar", completed: true, userId: 2}, {id: 3, title:"Business Profile", completed: false}]
+        todos: [{id: 1, title:"Login", completed:true, userId: 1, status: TodoStatus.Completed}, {id: 2, title:"Navbar", completed: true, userId: 2, status: TodoStatus.Completed}, {id: 3, title:"Business Profile", completed: false, status: TodoStatus.Pending}]
     }
     return project;
 }
@@ -61,3 +64,35 @@ updateTodo(todos[0], {completed: true});
 console.log(todos);
 const p = createProject();
 console.log(p);
+
+const updateTodoStatus = (todo: ToDo, status: TodoStatus) => {
+    let todoToUpdate = todos.find((element) => element.id == todo.id);
+    const i = todos.indexOf(todoToUpdate);
+    todos[i].status = status;
+}
+
+const user1 = new User(1, "Ludovica", "ludovica@test.com");
+const user2 = new User(2, "Ilaria", "ilaria@test.com");
+const user3 = new User(3, "Gianni", "gianni@test.com");
+
+const to1: ToDo = {id: 1, title:"Login", completed:true, userId: 1, status: TodoStatus.Completed}
+
+user1.addTodo({id: 1, title:"Login", completed:true, userId: 1, status: TodoStatus.Completed});
+user1.addTodo({id: 2, title:"Navbar", completed: true, userId: 2, status: TodoStatus.Completed});
+user1.addTodo({id: 3, title:"Business Profile", userId: 3, completed: false, status: TodoStatus.Pending});
+
+const genericFilter = (todos: ToDo[]) => {
+    return todos.filter((todo) => todo.completed);
+}
+
+filterTodos(p.todos, genericFilter);
+
+function convertArrayToRecord(todos: ToDo[]): TodoRecord {
+    return todos.reduce<TodoRecord>((record, todo) => {
+        record[todo.id] = todo;
+        return record
+    }, {})
+};
+
+const arr = convertArrayToRecord(p.todos);
+console.log(arr);
